@@ -1,8 +1,10 @@
 package ua.nure.fedorenko.lab1;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -15,6 +17,8 @@ import java.util.List;
 import butterknife.BindView;
 import ua.nure.fedorenko.lab1.adapter.NotesAdapter;
 import ua.nure.fedorenko.lab1.data.NoteModel;
+import ua.nure.fedorenko.lab1.data.db.repository.NotesDBRepository;
+import ua.nure.fedorenko.lab1.data.db.repository.NotesRepository;
 
 public class NotesActivity extends BaseActivity {
 
@@ -22,19 +26,14 @@ public class NotesActivity extends BaseActivity {
     RecyclerView notesRecycleView;
     List<NoteModel> notes;
 
+    private NotesRepository repository;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-        notes = new ArrayList<>();
-        NoteModel note = new NoteModel();
-        note.setName("nas");
-        note.setDescription("fghgfh");
-        note.setDate(new Date());
-        note.setImagePath("ana");
-        note.setImportance(1);
-        note.setId(46L);
-        notes.add(note);
+        repository = new NotesDBRepository();
+        notes = repository.getAll();
         NotesAdapter adapter = new NotesAdapter(this, notes);
         notesRecycleView.setAdapter(adapter);
         notesRecycleView.setLayoutManager(new LinearLayoutManager(this));

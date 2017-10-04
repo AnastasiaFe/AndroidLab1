@@ -1,6 +1,7 @@
 package ua.nure.fedorenko.lab1.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
@@ -55,7 +57,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
                 viewHolder.importanceImageView.setImageResource(R.drawable.index);
                 break;
         }
+        File imgFile = new File(note.getImagePath());
 
+        if (imgFile.exists()) {
+
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+            viewHolder.noteImageView.setImageBitmap(myBitmap);
+        }
     }
 
     @Override
