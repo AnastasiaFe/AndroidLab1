@@ -20,9 +20,9 @@ import ua.nure.fedorenko.lab1.data.mapper.ModelToDBModelMapper;
 
 public class NotesDBRepository implements NotesRepository {
 
-    private ModelAdapter<NoteDBModel> adapter;
-    private Mapper<NoteDBModel, NoteModel> modelToDBModelMapper;
-    private Mapper<NoteModel, NoteDBModel> dbModelToModelMapper;
+    private final ModelAdapter<NoteDBModel> adapter;
+    private final Mapper<NoteDBModel, NoteModel> modelToDBModelMapper;
+    private final Mapper<NoteModel, NoteDBModel> dbModelToModelMapper;
 
     public NotesDBRepository() {
         adapter = FlowManager.getModelAdapter(NoteDBModel.class);

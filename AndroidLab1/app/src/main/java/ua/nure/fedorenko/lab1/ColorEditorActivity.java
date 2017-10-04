@@ -9,20 +9,19 @@ import butterknife.BindView;
 
 
 public class ColorEditorActivity extends BaseActivity {
-    private int redSeekBarProgress;
-    private int greenSeekBarProgress;
-    private int blueSeekBarProgress;
+
     @BindView(R.id.redSeekBar)
-    SeekBar sbR;
+    SeekBar redSeekBar;
 
     @BindView(R.id.greenSeekBar)
-    SeekBar sbG;
+    SeekBar greenSeekBar;
 
     @BindView(R.id.blueSeekBar)
-    SeekBar sbB;
+    SeekBar blueSeekBar;
 
     @BindView(R.id.colorPanel)
     LinearLayout panel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,22 +40,11 @@ public class ColorEditorActivity extends BaseActivity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                switch (seekBar.getId()) {
-                    case R.id.redSeekBar:
-                        redSeekBarProgress = progress;
-                        break;
-                    case R.id.greenSeekBar:
-                        greenSeekBarProgress = progress;
-                        break;
-                    case R.id.blueSeekBar:
-                        blueSeekBarProgress = progress;
-                        break;
-                }
-                panel.setBackgroundColor(Color.rgb(redSeekBarProgress, greenSeekBarProgress, blueSeekBarProgress));
+                panel.setBackgroundColor(Color.rgb(redSeekBar.getProgress(), greenSeekBar.getProgress(), blueSeekBar.getProgress()));
             }
         };
-        sbR.setOnSeekBarChangeListener(onSeekBarChangeListener);
-        sbG.setOnSeekBarChangeListener(onSeekBarChangeListener);
-        sbB.setOnSeekBarChangeListener(onSeekBarChangeListener);
+        redSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+        greenSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+        blueSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
     }
 }
