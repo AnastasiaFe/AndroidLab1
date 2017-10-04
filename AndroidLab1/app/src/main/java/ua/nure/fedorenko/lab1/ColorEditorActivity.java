@@ -1,52 +1,58 @@
 package ua.nure.fedorenko.lab1;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
-import lab1.fedorenko.nure.ua.ua.R;
+import butterknife.BindView;
 
-public class ColorEditorActivity extends AppCompatActivity {
-    private int seekR;
-    private int seekG;
-    private int seekB;
 
+public class ColorEditorActivity extends BaseActivity {
+    private int redSeekBarProgress;
+    private int greenSeekBarProgress;
+    private int blueSeekBarProgress;
+    @BindView(R.id.redSeekBar)
+    SeekBar sbR;
+
+    @BindView(R.id.greenSeekBar)
+    SeekBar sbG;
+
+    @BindView(R.id.blueSeekBar)
+    SeekBar sbB;
+
+    @BindView(R.id.colorPanel)
+    LinearLayout panel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_editor);
-
-        SeekBar sbR = (SeekBar) findViewById(R.id.redSeekBar);
-        SeekBar sbG = (SeekBar) findViewById(R.id.greenSeekBar);
-        SeekBar sbB = (SeekBar) findViewById(R.id.blueSeekBar);
-        final LinearLayout panel = (LinearLayout) findViewById(R.id.colorPanel);
         SeekBar.OnSeekBarChangeListener onSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                //implementation is not needed
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
+                //implementation is not needed
             }
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch (seekBar.getId()) {
                     case R.id.redSeekBar:
-                        seekR = progress;
+                        redSeekBarProgress = progress;
                         break;
                     case R.id.greenSeekBar:
-                        seekG = progress;
+                        greenSeekBarProgress = progress;
                         break;
                     case R.id.blueSeekBar:
-                        seekB = progress;
+                        blueSeekBarProgress = progress;
                         break;
                 }
-                panel.setBackgroundColor(Color.rgb(seekR, seekG, seekB));
-
+                panel.setBackgroundColor(Color.rgb(redSeekBarProgress, greenSeekBarProgress, blueSeekBarProgress));
             }
         };
         sbR.setOnSeekBarChangeListener(onSeekBarChangeListener);

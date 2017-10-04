@@ -5,9 +5,12 @@ import java.util.Date;
 
 public class NoteModel {
 
-     private Long id;
-
-    String name;
+    private Long id;
+    private String name;
+    private String description;
+    private String imagePath;
+    private Integer importance;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -56,12 +59,4 @@ public class NoteModel {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    String description;
-
-    String imagePath;
-
-    Integer importance;
-
-    Date date;
 }

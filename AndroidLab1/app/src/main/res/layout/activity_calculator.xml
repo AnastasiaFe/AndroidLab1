@@ -29,18 +29,22 @@
             android:layout_weight="1">
             <Button
                style="@style/CalculatorButton"
+                android:tag="7"
                 android:id="@+id/btnSeven"
                 android:text="7" />
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnEight"
+                android:tag="8"
                 android:text="8" />
             <Button
                 style="@style/CalculatorButton"
+                android:tag="9"
                 android:id="@+id/btnNine"
                 android:text="9"/>
             <Button
                 style="@style/CalculatorButton"
+                android:tag="/"
                 android:id="@+id/btnDivide"
                 android:text="/"/>
         </LinearLayout>
@@ -52,17 +56,21 @@
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnFour"
+                android:tag="4"
                 android:text="4"/>
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnFive"
+                android:tag="5"
                 android:text="5" />
             <Button
                 style="@style/CalculatorButton"
+                android:tag="6"
                 android:id="@+id/btnSix"
                 android:text="6" />
             <Button
                 style="@style/CalculatorButton"
+                android:tag="*"
                 android:id="@+id/btnMultiply"
                 android:text="*" />
         </LinearLayout>
@@ -74,18 +82,22 @@
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnOne"
+                android:tag="1"
                 android:text="1" />
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnTwo"
+                android:tag="2"
                 android:text="2" />
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnThree"
+                android:tag="3"
                 android:text="3" />
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnSubtract"
+                android:tag="-"
                 android:text="-" />
         </LinearLayout>
 
@@ -96,10 +108,12 @@
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnDot"
+                android:tag="."
                 android:text="." />
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnZero"
+                android:tag="0"
                 android:text="0" />
             <Button
                 style="@style/CalculatorButton"
@@ -108,6 +122,7 @@
             <Button
                 style="@style/CalculatorButton"
                 android:id="@+id/btnAdd"
+                android:tag="+"
                 android:text="+" />
         </LinearLayout>
 

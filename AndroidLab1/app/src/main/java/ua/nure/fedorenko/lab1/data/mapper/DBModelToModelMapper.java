@@ -1,13 +1,15 @@
 package ua.nure.fedorenko.lab1.data.mapper;
 
 
+import android.support.annotation.NonNull;
+
 import ua.nure.fedorenko.lab1.data.NoteModel;
 import ua.nure.fedorenko.lab1.data.db.NoteDBModel;
 
-public class DBModelToModelMapper implements Mapper<NoteModel,NoteDBModel>{
+public class DBModelToModelMapper implements Mapper<NoteModel, NoteDBModel> {
 
     @Override
-    public NoteModel convert(NoteDBModel noteDBModel) {
+    public NoteModel convert(@NonNull NoteDBModel noteDBModel) {
         NoteModel note = new NoteModel();
         note.setId(noteDBModel.id);
         note.setName(noteDBModel.name);

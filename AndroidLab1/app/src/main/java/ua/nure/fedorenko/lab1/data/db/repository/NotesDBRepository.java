@@ -13,6 +13,7 @@ import java.util.List;
 import ua.nure.fedorenko.lab1.data.NoteModel;
 import ua.nure.fedorenko.lab1.data.db.NoteDBModel;
 import ua.nure.fedorenko.lab1.data.db.NoteDBModel_Table;
+import ua.nure.fedorenko.lab1.data.db.exception.DBException;
 import ua.nure.fedorenko.lab1.data.mapper.DBModelToModelMapper;
 import ua.nure.fedorenko.lab1.data.mapper.Mapper;
 import ua.nure.fedorenko.lab1.data.mapper.ModelToDBModelMapper;
@@ -30,18 +31,27 @@ public class NotesDBRepository implements NotesRepository {
     }
 
     @Override
-    public void create(@NonNull NoteModel note) {
-        adapter.insert(modelToDBModelMapper.convert(note));
+    public void create(@NonNull NoteModel note) throws DBException {
+        long rowsAffected = adapter.insert(modelToDBModelMapper.convert(note));
+        if (rowsAffected == 0) {
+            throw new DBException("Error during adding of note!");
+        }
     }
 
     @Override
-    public void update(@NonNull NoteModel note) {
-        adapter.update(modelToDBModelMapper.convert(note));
+    public void update(@NonNull NoteModel note) throws DBException {
+        boolean isUpdated = adapter.update(modelToDBModelMapper.convert(note));
+        if (!isUpdated) {
+            throw new DBException("Error during updating of note!");
+        }
     }
 
     @Override
-    public void delete(@NonNull NoteModel note) {
-        adapter.delete(modelToDBModelMapper.convert(note));
+    public void delete(@NonNull NoteModel note) throws DBException {
+        boolean isDeleted = adapter.delete(modelToDBModelMapper.convert(note));
+        if (!isDeleted) {
+            throw new DBException("Error during deleting of note!");
+        }
     }
 
     @NonNull
@@ -59,8 +69,15 @@ public class NotesDBRepository implements NotesRepository {
 
     @Nullable
     @Override
-    public NoteModel getById(@NonNull Long id) {
-        NoteDBModel dbModel = SQLite.select().from(NoteDBModel.class).where(NoteDBModel_Table.id.is(id)).querySingle();
-        return dbModelToModelMapper.convert(dbModel);
+    public NoteModel getById(@NonNull Long id) throws DBException {
+        NoteDBModel dbModel = SQLite.select()
+                .from(NoteDBModel.class)
+                .where(NoteDBModel_Table.id.is(id))
+                .querySingle();
+        if (dbModel != null) {
+            return dbModelToModelMapper.convert(dbModel);
+        } else {
+            throw new DBException("Error during getting note by id!");
+        }
     }
 }

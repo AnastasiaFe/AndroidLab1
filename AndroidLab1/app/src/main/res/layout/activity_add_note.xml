@@ -4,46 +4,50 @@
     android:layout_height="match_parent"
     android:layout_weight="3"
     android:orientation="vertical"
-    android:weightSum="5"
-    tools:context="lab1.fedorenko.nure.ua.ua.AddNoteActivity">
+    android:weightSum="5">
 
     <EditText
         android:id="@+id/noteNameEditText"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:hint="Name"
-        android:layout_weight="1" />
-    <EditText
-        android:layout_width="300dp"
         android:layout_weight="1"
-        android:hint="Description"
+        android:hint="@string/name" />
+
+    <EditText
         android:id="@+id/noteDescriptionEditText"
-        android:layout_height="0dp" />
-    <EditText
         android:layout_width="300dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Importance (1-3)"
+        android:hint="@string/description" />
+
+    <EditText
         android:id="@+id/noteImportanceEditText"
-        android:layout_height="wrap_content" />
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Importance (1-3)" />
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="0dp">
-<Button
-    android:layout_width="100dp"
-    android:layout_height="match_parent"
-    android:id="@+id/uploadImageButton"
-    android:text="Upload image"
-   />
-    <ImageView
-        android:layout_width="100dp"
-        android:id="@+id/uploadedImage"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/uploadImageButton"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="@string/upload_image" />
+
+        <ImageView
+            android:id="@+id/uploadedImage"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
     </LinearLayout>
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_weight="1"
         android:id="@+id/addNoteButton"
-        android:text="Add"
-        android:layout_height="0dp" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/add" />
 </LinearLayout>
