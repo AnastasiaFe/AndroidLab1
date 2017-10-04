@@ -22,43 +22,29 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            style="@style/SeekBarTitle"
             android:text="@string/red" />
 
         <SeekBar
             android:id="@+id/redSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:max="255" />
+            style="@style/SeekBar"
+            android:layout_marginTop="10dp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            style="@style/SeekBarTitle"
             android:text="@string/green" />
 
         <SeekBar
             android:id="@+id/greenSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginBottom="20dp"
-            android:max="255" />
+            style="@style/SeekBar" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            style="@style/SeekBarTitle"
             android:text="@string/blue" />
 
         <SeekBar
             android:id="@+id/blueSeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:max="255" />
+            style="@style/SeekBar" />
     </LinearLayout>
 </LinearLayout>
 

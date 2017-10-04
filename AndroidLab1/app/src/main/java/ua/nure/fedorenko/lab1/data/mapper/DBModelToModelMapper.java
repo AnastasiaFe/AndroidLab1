@@ -9,6 +9,7 @@ import ua.nure.fedorenko.lab1.data.db.NoteDBModel;
 public class DBModelToModelMapper implements Mapper<NoteModel, NoteDBModel> {
 
     @Override
+    @NonNull
     public NoteModel convert(@NonNull NoteDBModel noteDBModel) {
         NoteModel note = new NoteModel();
         note.setId(noteDBModel.id);

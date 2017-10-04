@@ -40,7 +40,8 @@ public class ColorEditorActivity extends BaseActivity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                panel.setBackgroundColor(Color.rgb(redSeekBar.getProgress(), greenSeekBar.getProgress(), blueSeekBar.getProgress()));
+                int color = Color.rgb(redSeekBar.getProgress(), greenSeekBar.getProgress(), blueSeekBar.getProgress());
+                panel.setBackgroundColor(color);
             }
         };
         redSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);

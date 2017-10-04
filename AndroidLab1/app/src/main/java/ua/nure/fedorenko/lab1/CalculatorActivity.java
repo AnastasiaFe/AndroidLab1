@@ -32,32 +32,21 @@ public class CalculatorActivity extends BaseActivity {
         setContentView(R.layout.activity_calculator);
     }
 
-    /**
-     * Find and set OnClickListener to numeric buttons.
-     */
     @OnClick({R.id.btnZero, R.id.btnOne, R.id.btnTwo, R.id.btnThree,
             R.id.btnFour, R.id.btnFive, R.id.btnSix, R.id.btnSeven, R.id.btnEight, R.id.btnNine})
     void onNumericButtonClick(View v) {
         Button button = (Button) v;
         if (stateError) {
-            // If current state is Error, replace the error message
             calculationResultTextView.setText(button.getTag().toString());
             stateError = false;
         } else {
-            // If not, already there is a valid expression so append to it
             calculationResultTextView.append(button.getTag().toString());
         }
-        // Set the flag
         lastNumeric = true;
     }
 
-    /**
-     * Find and set OnClickListener to operator buttons, equal button and decimal point button.
-     */
     @OnClick({R.id.btnAdd, R.id.btnSubtract, R.id.btnMultiply, R.id.btnDivide})
     void onOperatorButtonClick(View v) {
-        // If the current state is Error do not append the operator
-        // If the last input is number only, append the operator
         if (lastNumeric && !stateError) {
             Button button = (Button) v;
             calculationResultTextView.append(button.getTag().toString());
@@ -78,7 +67,6 @@ public class CalculatorActivity extends BaseActivity {
     @OnClick(R.id.btnClear)
     void onClearButtonClick(View v) {
         calculationResultTextView.setText("");
-        // Reset all the states and flags
         lastNumeric = false;
         stateError = false;
         lastDot = false;
@@ -87,12 +75,9 @@ public class CalculatorActivity extends BaseActivity {
     @OnClick(R.id.btnEqual)
     void onEqualButtonClick(View v) {
         if (lastNumeric && !stateError) {
-            // Read the expression
             String txt = calculationResultTextView.getText().toString();
-            // Create an Expression (A class from exp4j library)
             Expression expression = new ExpressionBuilder(txt).build();
             try {
-                // Calculate the result and display
                 double result = expression.evaluate();
                 calculationResultTextView.setText(Double.toString(result));
                 lastDot = true;
