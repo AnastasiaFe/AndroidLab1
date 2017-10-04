@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp" >
     <ImageView
@@ -9,6 +9,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:gravity="center_vertical" />
+    <TextView
+        android:layout_width="80dp"
+        android:textSize="14sp"
+        android:id="@+id/noteName"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/creationDate"
         android:layout_width="80dp"

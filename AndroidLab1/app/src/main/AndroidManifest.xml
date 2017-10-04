@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ua.nure.fedorenko.lab1">
+
     <application
         android:name=".FirstLabApplication"
         android:allowBackup="true"
@@ -19,6 +20,8 @@
         </activity>
         <activity android:name=".CalculatorActivity" />
         <activity android:name=".ColorEditorActivity" />
+        <activity android:name=".NotesActivity" />
+        <activity android:name=".AddNoteActivity" />
 
     </application>
 

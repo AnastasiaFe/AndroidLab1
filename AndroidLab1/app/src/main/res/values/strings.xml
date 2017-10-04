@@ -12,4 +12,10 @@
     <string name="add">Add</string>
     <string name="addNote">Add note</string>
     <string name="error">Error</string>
+
+    <string-array name="importances">
+        <item>Very important</item>
+        <item>Medium</item>
+        <item>Not important</item>
+    </string-array>
 </resources>

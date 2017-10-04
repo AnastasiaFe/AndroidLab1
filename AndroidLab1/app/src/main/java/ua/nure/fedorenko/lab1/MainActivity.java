@@ -23,4 +23,9 @@ public class MainActivity extends BaseActivity {
     public void colorButtonClick(View v) {
         startActivity(new Intent(MainActivity.this, ColorEditorActivity.class));
     }
+
+    @OnClick(R.id.notesButton)
+    public void notesButtonClick(View v) {
+        startActivity(new Intent(MainActivity.this, NotesActivity.class));
+    }
 }
