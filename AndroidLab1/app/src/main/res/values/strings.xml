@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AndroidLab1</string>
+    <string name="color_editor">Color Editor</string>
+    <string name="calculator">Calculator</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="importance">Importance</string>
+    <string name="upload_image">Upload image</string>
+    <string name="add">Add</string>
+    <string name="addNote">Add note</string>
+    <string name="error">Error</string>
+
+    <string-array name="importances">
+        <item>Very important</item>
+        <item>Medium</item>
+        <item>Not important</item>
+    </string-array>
+</resources>
