@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidLab1</string>
+    <string name="colorEditor">Color Editor</string>
+    <string name="calculator">Calculator</string>
+</resources>

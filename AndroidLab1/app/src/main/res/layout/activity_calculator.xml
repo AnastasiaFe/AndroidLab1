@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ua.nure.fedorenko.lab1.CalculatorActivity">
+
+    <TextView
+        android:id="@+id/txtScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="end|center_vertical"
+        android:maxLength="16"
+        android:padding="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtScreen"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+               style="@style/CalculatorButton"
+                android:id="@+id/btnSeven"
+                android:text="7" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnEight"
+                android:text="8" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnNine"
+                android:text="9"/>
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnDivide"
+                android:text="/"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnFour"
+                android:text="4"/>
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnFive"
+                android:text="5" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnSix"
+                android:text="6" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnMultiply"
+                android:text="*" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnOne"
+                android:text="1" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnTwo"
+                android:text="2" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnThree"
+                android:text="3" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnSubtract"
+                android:text="-" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnDot"
+                android:text="." />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnZero"
+                android:text="0" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnClear"
+                android:text="C" />
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btnAdd"
+                android:text="+" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+          android:layout_height="0dp"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:id="@+id/btnEqual"
+            android:text="=" />
+    </LinearLayout>
+</RelativeLayout>
