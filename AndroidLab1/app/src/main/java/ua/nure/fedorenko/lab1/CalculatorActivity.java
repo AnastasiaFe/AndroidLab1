@@ -41,11 +41,11 @@ public class CalculatorActivity extends BaseActivity {
         Button button = (Button) v;
         if (stateError) {
             // If current state is Error, replace the error message
-            calculationResultTextView.setText(button.getText());
+            calculationResultTextView.setText(button.getTag().toString());
             stateError = false;
         } else {
             // If not, already there is a valid expression so append to it
-            calculationResultTextView.append(button.getText());
+            calculationResultTextView.append(button.getTag().toString());
         }
         // Set the flag
         lastNumeric = true;
